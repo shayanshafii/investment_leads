@@ -1,0 +1,310 @@
+{
+    "138290": {
+        "metadata": {
+            "name": "target_funded_companies",
+            "search_type": "companies",
+            "primary_key": "entity_urn",
+            "table_description": "Companies that received funding from any target investor. Only includes companies with <$20M in total funding.",
+            "display_name": "Target Funded Companies",
+            "display_columns": ["name", "founders", "stage", "total_funding", "investors", "description"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "name": "TEXT",
+            "website": "TEXT",
+            "stage": "TEXT",
+            "total_funding": "TEXT",
+            "investors": "TEXT",
+            "description": "TEXT",
+            "created_at": "DATE",
+            "founders": "JSONB",
+            "location": "TEXT"
+        }
+    },
+    "138294": {
+        "metadata": {
+            "name": "yc_companies",
+            "search_type": "companies",
+            "primary_key": "entity_urn",
+            "table_description": "Any companies discovered from the current YC batch. Companies are only surfaced if the founders have been discovered.",
+            "display_name": "YC Companies",
+            "display_columns": ["name", "founders", "stage", "total_funding", "batch", "investors", "description"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "name": "TEXT",
+            "website": "TEXT",
+            "stage": "TEXT",
+            "total_funding": "TEXT",
+            "investors": "TEXT",
+            "description": "TEXT",
+            "created_at": "DATE",
+            "founders": "JSONB",
+            "batch": "TEXT",
+            "location": "TEXT"
+        }
+    },
+    "138295": {
+        "metadata": {
+            "name": "stealth_founders",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "People who are explicitly in stealth and previously worked at a target company. There are no restriction on their prior job title or tenure.",
+            "display_name": "Stealth Founders",
+            "display_columns": ["full_name", "current_title", "current_company", "former_title", "former_company", "email"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "current_title": "TEXT",
+            "current_company": "TEXT",
+            "former_title": "TEXT",
+            "former_company": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "138296": {
+        "metadata": {
+            "name": "free_agents",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "People who ended their latest role and have not explicitly disclosed what they're doing next. They must have held a technical role at a target company in the past. This table may have some noise as my data provider can lag Linkedin by a few weeks.",
+            "display_name": "Free Agents",
+            "display_columns": ["full_name", "former_title", "former_company", "email"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "former_title": "TEXT",
+            "former_company": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "138299": {
+        "metadata": {
+            "name": "prod",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "Anyone that adds Prod to their education or work experience on Linkedin. No restrictions on whether they are explicitly a founder or not.",
+            "display_name": "Prod",
+            "display_columns": ["full_name", "current_title", "current_company", "email"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "current_title": "TEXT",
+            "current_company": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "138298": {
+        "metadata": {
+            "name": "z_fellows",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "Anyone that adds Z Fellows to their education, work experience, or headline on Linkedin. No restrictions on whether they are explicitly a founder or not.",
+            "display_name": "Z Fellows",
+            "display_columns": ["full_name", "current_title", "current_company", "email"]
+        },  
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "current_title": "TEXT",
+            "current_company": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "138574": {
+        "metadata": {
+            "name": "neo_scholars",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "Anyone that adds Neo to their education or work experience on Linkedin. No restrictions on whether they are explicitly a founder or not.",
+            "display_name": "Neo Scholars",
+            "display_columns": ["full_name", "current_title", "current_company", "email"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "current_title": "TEXT",
+            "current_company": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "145948": {
+        "metadata": {
+            "name": "spc",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "Anyone that adds SPC to their work experience on Linkedin. No restrictions on whether they are explicitly a founder or not.",
+            "display_name": "SPC",
+            "display_columns": ["full_name", "current_title", "current_company", "former_title", "former_company", "email"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "current_title": "TEXT",
+            "current_company": "TEXT",
+            "former_title": "TEXT",
+            "former_company": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "152808": {
+        "metadata": {
+            "name": "nodes",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "Potential nodes working at target companies. These people were either (1) former founders somewhere in their past, or (2) have previously done fellowship / scout roles at top venture firms.",
+            "display_name": "Nodes",
+            "display_columns": ["full_name", "current_title", "current_company", "former_title", "former_company", "email"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "current_title": "TEXT",
+            "current_company": "TEXT",
+            "former_title": "TEXT",
+            "former_company": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "152050": {
+        "metadata": {
+            "name": "v11",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "Anyone who adds V11 to their work history on Linkedin.",
+            "display_name": "V11",
+            "display_columns": ["full_name", "current_title", "current_company", "former_title", "former_company", "email"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "current_title": "TEXT",
+            "current_company": "TEXT",
+            "former_title": "TEXT",
+            "former_company": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "149679": {
+        "metadata": {
+            "name": "interns",
+            "search_type": "people",
+            "primary_key": "entity_urn",
+            "table_description": "People who attend a target university and just finished a technical internship at a target company.",
+            "display_name": "Interns",
+            "display_columns": ["full_name", "university", "former_title", "former_company", "email"]
+        },
+        "schema": {
+            "entity_urn": "TEXT",
+            "linkedin_url": "TEXT",
+            "full_name": "TEXT",
+            "former_title": "TEXT",
+            "former_company": "TEXT",
+            "university": "TEXT",
+            "email": "TEXT",
+            "created_at": "DATE"
+        }
+    },
+    "signa_linkedin_connections": {
+        "metadata": {
+            "name": "signa_linkedin_connections",
+            "search_type": "events",
+            "primary_key": "event_id",
+            "table_description": "Target investors connecting with founders on LinkedIn.",
+            "display_name": "LinkedIn Connections",
+            "display_columns": ["founder_name", "connections", "connection_count"]
+        },
+        "schema": {
+            "event_id": "TEXT",
+            "founder_name": "TEXT",
+            "founder_headline": "TEXT",
+            "founder_linkedin_url": "TEXT",
+            "founder_twitter_url": "TEXT",
+            "connection_name": "TEXT",
+            "connection_headline": "TEXT",
+            "connection_linkedin_url": "TEXT",
+            "event_date": "DATE",
+            "created_at": "DATE"
+        }
+    },
+    "signa_twitter_follows": {
+        "metadata": {
+            "name": "signa_twitter_follows",
+            "search_type": "events",
+            "primary_key": "event_id",
+            "table_description": "Target investors following founders on Twitter.",
+            "display_name": "Twitter Follows",
+            "display_columns": ["founder_name", "followers", "follower_count"]
+        },
+        "schema": {
+            "event_id": "TEXT",
+            "founder_name": "TEXT",
+            "founder_headline": "TEXT",
+            "founder_linkedin_url": "TEXT",
+            "founder_twitter_url": "TEXT",
+            "follower_name": "TEXT",
+            "follower_description": "TEXT",
+            "follower_twitter_url": "TEXT",
+            "follower_linkedin_url": "TEXT",
+            "event_date": "DATE",
+            "created_at": "DATE"
+        }
+    },
+    "signa_into_stealth": {
+        "metadata": {
+            "name": "signa_into_stealth",
+            "search_type": "events",
+            "primary_key": "user_id",
+            "table_description": "Signa events for founders who have gone into stealth.",
+            "display_name": "Into Stealth (Signa)",
+            "display_columns": ["full_name", "linkedin_headline", "event_date"]
+        },
+        "schema": {
+            "user_id": "TEXT",
+            "full_name": "TEXT",
+            "linkedin_url": "TEXT",
+            "twitter_url": "TEXT",
+            "linkedin_headline": "TEXT",
+            "event_date": "DATE",
+            "created_at": "DATE"
+        }
+    },
+    "signa_out_of_stealth": {
+        "metadata": {
+            "name": "signa_out_of_stealth",
+            "search_type": "events",
+            "primary_key": "user_id",
+            "table_description": "Signa events for founders who have come out of stealth.",
+            "display_name": "Out of Stealth (Signa)",
+            "display_columns": ["full_name", "linkedin_headline", "event_date"]
+        },
+        "schema": {
+            "user_id": "TEXT",
+            "full_name": "TEXT",
+            "linkedin_url": "TEXT",
+            "twitter_url": "TEXT",
+            "linkedin_headline": "TEXT",
+            "event_date": "DATE",
+            "created_at": "DATE"
+        }
+    }
+}
