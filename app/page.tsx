@@ -72,6 +72,9 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-gray-900 pt-4 pb-4 border-b border-gray-200 mb-8">
           Investment Leads
         </h1>
+        <p className="text-gray-600 mb-6">
+          Investment Leads is a web app interface for viewing founders, nodes, and leads detected on any given day. Please select a date and click &quot;Query&quot; to see the intel discovered for that day.
+        </p>
         <div className="flex flex-row gap-6 items-end mb-8">
           <div className="border border-gray-200 rounded-md">
             <Calendar
