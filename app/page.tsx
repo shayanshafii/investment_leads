@@ -4,6 +4,7 @@ import { useState } from "react"
 import { format } from "date-fns"
 import { Calendar } from "@/components/ui/calendar"
 import { Button } from "@/components/ui/button"
+import schemas from "@/schemas.json"
 
 interface StealthFounder {
   entity_urn: string
@@ -26,6 +27,25 @@ interface FreeAgent {
   email: string | null
   created_at: string
 }
+
+interface SchemaMetadata {
+  name: string
+  table_description?: string
+}
+
+interface Schema {
+  metadata: SchemaMetadata
+}
+
+const getTableDescription = (tableName: string): string => {
+  const schema = Object.values(schemas).find(
+    (s: Schema) => s.metadata?.name === tableName
+  )
+  return schema?.metadata?.table_description || ""
+}
+
+const stealthFoundersDescription = getTableDescription("stealth_founders")
+const freeAgentsDescription = getTableDescription("free_agents")
 
 export default function Home() {
   const [date, setDate] = useState<Date>()
@@ -103,9 +123,12 @@ export default function Home() {
           <div className="grid gap-6">
             {stealthFounders.length > 0 && (
               <div className="bg-white rounded-lg shadow-md p-6">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+                <h2 className="text-2xl font-semibold mb-2 text-gray-900">
                   Stealth Founders
                 </h2>
+                <p className="text-gray-600 text-sm mb-4">
+                  {stealthFoundersDescription}
+                </p>
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
@@ -161,9 +184,12 @@ export default function Home() {
 
             {freeAgents.length > 0 && (
               <div className="bg-white rounded-lg shadow-md p-6">
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+                <h2 className="text-2xl font-semibold mb-2 text-gray-900">
                   Free Agents
                 </h2>
+                <p className="text-gray-600 text-sm mb-4">
+                  {freeAgentsDescription}
+                </p>
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
