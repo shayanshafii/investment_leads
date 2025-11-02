@@ -133,22 +133,22 @@ export default function Home() {
                     <tbody className="bg-white divide-y divide-gray-200">
                       {stealthFounders.map((founder) => (
                         <tr key={founder.entity_urn} className="hover:bg-gray-50">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <td className="px-6 py-4 text-sm font-medium text-gray-900 break-words">
                             {founder.full_name || "-"}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <td className="px-6 py-4 text-sm text-gray-500 break-words">
                             {founder.current_title || "-"}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <td className="px-6 py-4 text-sm text-gray-500 break-words">
                             {founder.current_company || "-"}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <td className="px-6 py-4 text-sm text-gray-500 break-words">
                             {founder.former_title || "-"}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <td className="px-6 py-4 text-sm text-gray-500 break-words">
                             {founder.former_company || "-"}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <td className="px-6 py-4 text-sm text-gray-500 break-words">
                             {founder.email || "-"}
                           </td>
                         </tr>
@@ -185,16 +185,16 @@ export default function Home() {
                     <tbody className="bg-white divide-y divide-gray-200">
                       {freeAgents.map((agent) => (
                         <tr key={agent.entity_urn} className="hover:bg-gray-50">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <td className="px-6 py-4 text-sm font-medium text-gray-900 break-words">
                             {agent.full_name || "-"}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <td className="px-6 py-4 text-sm text-gray-500 break-words">
                             {agent.former_title || "-"}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <td className="px-6 py-4 text-sm text-gray-500 break-words">
                             {agent.former_company || "-"}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <td className="px-6 py-4 text-sm text-gray-500 break-words">
                             {agent.email || "-"}
                           </td>
                         </tr>
