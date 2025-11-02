@@ -4,6 +4,7 @@ import { useState } from "react"
 import { format } from "date-fns"
 import { Calendar } from "@/components/ui/calendar"
 import { Button } from "@/components/ui/button"
+import schemas from "@/schemas.json"
 
 interface StealthFounder {
   entity_urn: string
@@ -26,6 +27,13 @@ interface FreeAgent {
   email: string | null
   created_at: string
 }
+
+const tableDescriptions: Record<string, string> = {}
+Object.values(schemas).forEach((schema) => {
+  if (schema.metadata?.display_name && schema.metadata?.table_description) {
+    tableDescriptions[schema.metadata.display_name] = schema.metadata.table_description
+  }
+})
 
 export default function Home() {
   const [date, setDate] = useState<Date>()
@@ -106,6 +114,11 @@ export default function Home() {
                 <h2 className="text-2xl font-semibold mb-4 text-gray-900">
                   Stealth Founders
                 </h2>
+                {tableDescriptions["Stealth Founders"] && (
+                  <p className="text-gray-600 text-sm mb-4">
+                    {tableDescriptions["Stealth Founders"]}
+                  </p>
+                )}
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
@@ -164,6 +177,11 @@ export default function Home() {
                 <h2 className="text-2xl font-semibold mb-4 text-gray-900">
                   Free Agents
                 </h2>
+                {tableDescriptions["Free Agents"] && (
+                  <p className="text-gray-600 text-sm mb-4">
+                    {tableDescriptions["Free Agents"]}
+                  </p>
+                )}
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
